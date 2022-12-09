@@ -3,8 +3,8 @@ const Users = require('./Users');
 const Communities = require('./Communities');
 const Posts = require('./Posts');
 const Replys = require('./Replys');
-const Files = require('./Files');
-const Friends = require('./Friends');
+//const Files = require('./Files');
+//const Friends = require('./Friends');
 
 
 Posts.belongsTo(Communities, {
@@ -52,6 +52,6 @@ module.exports = {
     Communities,
     Posts,
     Replys,
-    Files,
-    Friends,
+   // Files,
+    //Friends,
   };
