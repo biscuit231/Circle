@@ -5,7 +5,7 @@ class Communities extends Model {}
 
 Communities.init(
   {
-    Communities_id: {
+    communities_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -18,11 +18,11 @@ Communities.init(
     com_owner: {
         type: DataTypes.STRING,
         allowNull: false,
+        references: { 
+          model: 'users',
+          key: 'user_id',
+        },
     },
-    com_members: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    }
   },
   {
     sequelize,
