@@ -16,11 +16,11 @@ Communities.init(
         allowNull: false,
     },
     com_owner: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: { 
           model: 'users',
-          key: 'user_id',
+          key: 'users_id',
         },
     },
   },

@@ -11,7 +11,7 @@ Posts.belongsTo(Communities, {
   foreignKey: 'communities_id'
 });
 Communities.hasMany(Posts, {
-  foreignKey: 'posts_id'
+  foreignKey: 'post_id'
 });
 
 
@@ -45,18 +45,15 @@ Communities.hasMany(Users, {
 
 Users.belongsTo(Communities, {
   foreignKey: 'communities_id'
+});
 
-
-Users.hasOne(Communities, {
-  foreignKey: 'communities_id'
-}
 
 
 module.exports = {
     Users,
     Communities,
     Posts,
-    Replys,
+    //Replys,
    // Files,
     //Friends,
   };
