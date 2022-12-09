@@ -21,22 +21,27 @@ Posts.init(
     },
     post_files: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     post_author: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    post_date: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        references: {
+            model: 'users',
+            key: 'users_id',
+        }
+    },
+    post_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
     },
     post_replys: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     post_location: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
     }
   },

@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { Posts, Users, Comment } = require('../models');
-const withAuth = require('../utils/auth');
+const { Posts, Users, Communities } = require('../models');
+//const withAuth = require('../utils/auth');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
@@ -15,3 +15,5 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
     })
+
+    module.exports = router;
