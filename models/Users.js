@@ -44,8 +44,9 @@ Users.init(
         }
     },
     date_created: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW,
     },
     friends: {
         type: DataTypes.STRING,
@@ -53,7 +54,7 @@ Users.init(
     },
     communities: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'communities',
             key: 'communities_id',
@@ -61,11 +62,11 @@ Users.init(
     },
     posts: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     replys: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     }
   },
   {
