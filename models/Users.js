@@ -10,10 +10,11 @@ class Users extends Model {
 Users.init(
   {
     users_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV1,
+        // allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        // autoIncrement: true
     },
     user_name: {
         type: DataTypes.STRING,
@@ -44,41 +45,13 @@ Users.init(
         }
     },
     date_created: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
-    },
-    friends: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    communities: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'communities',
-            key: 'communities_id',
-        },
-    },
-    posts: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    replys: {
-        type: DataTypes.STRING,
-        allowNull: false,
+        defaultValue: DataTypes.NOW,
     }
-  },
-  {
-    // hooks: {
-    //     beforeCreate: async (newUserData) => {
-    //         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-    //         return newUserData;
-    //     },
-    //     beforeUpdate: async (updatedUserData) => {
-    //         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-    //         return updatedUserData;
-    //     }
-    // },
+    },
+    {
+    
     sequelize,
     timestamps: false,
     freezeTableName: true,
