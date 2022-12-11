@@ -6,8 +6,9 @@ class Posts extends Model {}
 Posts.init(
   {
     post_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV1,
+        // allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },
@@ -16,7 +17,7 @@ Posts.init(
         allowNull: false,
     },
     post_body: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
     post_files: {
@@ -24,12 +25,12 @@ Posts.init(
         allowNull: true,
     },
     post_author: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
-        references: {
-            model: 'users',
-            key: 'users_id',
-        }
+        // references: {
+        //     model: 'users',
+        //     key: 'users_id',
+        // }
     },
     post_date: {
         type: DataTypes.DATE,
@@ -42,7 +43,7 @@ Posts.init(
     },
     post_location: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     }
   },
   {

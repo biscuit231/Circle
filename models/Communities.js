@@ -6,8 +6,9 @@ class Communities extends Model {}
 Communities.init(
   {
     communities_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV1,
+        // allowNull: false,
         primaryKey: true,
         autoIncrement: true
     },
@@ -16,12 +17,12 @@ Communities.init(
         allowNull: false,
     },
     com_owner: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
-        references: { 
-          model: 'users',
-          key: 'users_id',
-        },
+        // references: { 
+        //   model: 'users',
+        //   key: 'users_id',
+        // },
     },
   },
   {
