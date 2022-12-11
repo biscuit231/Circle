@@ -7,10 +7,10 @@ Posts.init(
   {
     post_id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV1,
+        defaultValue: DataTypes.UUIDV4,
         // allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        // autoIncrement: true
     },
     post_title: {
         type: DataTypes.STRING,
@@ -20,10 +20,10 @@ Posts.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    post_files: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
+    // post_files: {
+    //     type: DataTypes.STRING,
+    //     allowNull: true,
+    // },
     post_author: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -37,14 +37,14 @@ Posts.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
-    post_replys: {
-        type: DataTypes.STRING,
-        allowNull: true,
-    },
-    post_location: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-    }
+    // post_replys: {
+    //     type: DataTypes.STRING,
+    //     allowNull: true,
+    // },
+    // post_location: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true,
+    // }
   },
   {
     sequelize,

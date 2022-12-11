@@ -1,10 +1,20 @@
 //import models
 const Users = require('./Users');
 // const Communities = require('./Communities');
-// const Posts = require('./Posts');
+ const Posts = require('./Posts');
 //const Replys = require('./Replys');
 //const Files = require('./Files');
 //const Friends = require('./Friends');
+
+
+//User and post relationship
+Users.hasMany(Posts, {  
+    foreignKey: 'users_id',
+});
+
+Posts.belongsTo(Users, {  
+    foreignKey: 'users_id',
+});
 
 
 // Posts.belongsTo(Communities, {
@@ -52,7 +62,7 @@ const Users = require('./Users');
 module.exports = {
     Users,
     // Communities,
-    // Posts,
+    Posts,
     //Replys,
    // Files,
     //Friends,
