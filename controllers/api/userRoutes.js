@@ -59,6 +59,7 @@ router.post('/login', async (req, res) => {
         req.session.save(() => {
             req.session.loggedIn = true;
             TODO://add user id to session, need to check if i can use user_id from model?
+            req.session.user_id = userData.id;
             res 
                 .status(200)
                 .json({ user: userData, message: 'You are now logged in!' });

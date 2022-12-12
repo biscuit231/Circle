@@ -2,19 +2,37 @@
 const Users = require('./Users');
 // const Communities = require('./Communities');
  const Posts = require('./Posts');
-//const Replys = require('./Replys');
+const Replys = require('./Replys');
 //const Files = require('./Files');
 //const Friends = require('./Friends');
 
 
 //User and post relationship
 Users.hasMany(Posts, {  
-    foreignKey: 'users_id',
+    foreignKey: 'post_author',
 });
 
 Posts.belongsTo(Users, {  
-    foreignKey: 'users_id',
+    foreignKey: 'post_author',
 });
+
+// Users.hasMany(Replys, {
+//     foreignKey: 'reply_author',
+// });
+
+// Replys.belongsTo(Users, {   
+//     foreignKey: 'reply_author',
+// }); 
+
+// Posts.hasMany(Replys, { 
+//     foreignKey: 'posts_id',
+// });
+
+// Replys.belongsTo(Posts, {
+//     foreignKey: 'posts_id',
+// });
+
+
 
 
 // Posts.belongsTo(Communities, {

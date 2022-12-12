@@ -6,14 +6,19 @@ class Replys extends Model {}
 Replys.init(
   {
     replys_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        // allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        // autoIncrement: true
     },
     reply_author: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false,
+        references: {
+          model: 'users',
+          key: 'users_id',
+        }
     },
     reply_body: {
         type: DataTypes.STRING,
