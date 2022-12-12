@@ -31,7 +31,8 @@ body {
 /* post section */
 .mainBorder {
     margin: 10px;
-    background-color: rgb(155, 155, 155);
+    padding: 5px;
+    background-color: rgb(46, 65, 114);
 }
 .topPostBar {
     text-align: center;
@@ -81,6 +82,16 @@ body {
   .btnDown:hover {
     color: red;
   }
+  @media screen and (max-width: 2400px) {
+    .mainBorder {
+        width: 60%;
+        margin-left: 20%;
+    }
+    .postSection {
+        width: 99.4%;
+        margin-top: 15px;
+    }
+   }
 
 /* login/signup page */
 .signInUpBox {
@@ -121,13 +132,30 @@ body {
     font-size: 18px;
 }
 
-/* media query */
-@media screen and (max-width: 680px) {
-    .logoImg {
-    }
-    .signInUpBox {
-        height: 400px;
-        margin: -200px 0 0 -150px;
+@media screen and (max-width: 2400px) {
+ .signLogo {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    left: 30%;
+ }
+ .signInUpBox {
+    height: 400px;
+ }
+}
+
+@media screen and (max-width: 780px) {
+    .signLogo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        width: 95%;
+        position: absolute;
+        z-index: 10;
+        left: 0;
     }
 }
+
+
 
