@@ -82,7 +82,7 @@ body {
     color: red;
   }
 
-/* login page */
+/* login/signup page */
 .signInUpBox {
     background-color: var(--light-grey);
     position: absolute;
@@ -113,6 +113,12 @@ body {
 }
 .signIn {
     margin-top: 8px;
+}
+.signUp {
+    margin-top: 10px;
+}
+.signUpFont {
+    font-size: 18px;
 }
 
 /* media query */
