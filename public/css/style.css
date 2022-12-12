@@ -8,7 +8,7 @@ body {
 
 /* nav */
 .navBg {
-    background-color: grey;
+    background-color: rgb(0, 180, 220);
     height: 100px;
     padding: 5px;
 }
