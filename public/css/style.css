@@ -1,0 +1,119 @@
+/* general */
+body {
+    margin: 0;
+}
+:root {
+    --light-grey: rgb(208, 208, 208);
+}
+
+/* nav */
+.navBg {
+    background-color: grey;
+    height: 100px;
+    padding: 5px;
+}
+.navBtn {
+    font-size: 16px;
+}
+.logoImg {
+    width: 90px;
+    height: auto;
+    padding-bottom: 10px;
+}
+#searchBtn {
+    width: 28px;
+    border-radius: 30px;
+    height: 28px;
+    text-align: center;
+}
+/* end nav */
+
+/* post section */
+.mainBorder {
+    margin: 10px;
+    background-color: rgb(155, 155, 155);
+}
+.topPostBar {
+    text-align: center;
+}
+.topPostBorder {
+}
+.postBox {
+    margin: 10px;
+    border: solid black;
+    background-color: white;
+}
+.postBoxText {
+    margin: 9px;
+}
+.postImg{
+    margin: 10px;
+    border: solid black;
+    background-color: white;
+}
+.arrowIcon{
+    border: solid 2px black;
+    border-radius: 30px;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+}
+.postSection {
+    margin: 3px;
+    background-color: var(--light-grey);
+    padding-top: 10px;
+}
+.btnUp {
+    border: none; 
+    cursor: pointer; 
+    background-color: var(--light-grey);
+    margin: 5px;
+  }
+  .btnUp:hover {
+    color: green;
+  }
+  .btnDown {
+    border: none; 
+    cursor: pointer; 
+    text-align: center;
+    background-color: var(--light-grey);
+  }
+  .btnDown:hover {
+    color: red;
+  }
+
+/* login page */
+.signInUpBox {
+    background-color: var(--light-grey);
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+}
+.signCenter {
+    text-align: center;
+}
+.signLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    width: 90%;
+}
+.signBoxMargin {
+    margin-left: 10px;
+}
+
+/* media query */
+@media screen and (max-width: 680px) {
+    .logoImg {
+    }
+    .signInUpBox {
+        height: 400px;
+        margin: -200px 0 0 -150px;
+    }
+}
+
