@@ -92,6 +92,19 @@ body {
         margin-top: 15px;
     }
    }
+   @media screen and (max-width: 780px) {
+    .mainBorder {
+        margin: 10px;
+        padding: 5px;
+        background-color: rgb(46, 65, 114);
+        width: 92%;
+    }
+    .postSection {
+        margin: 3px;
+        background-color: var(--light-grey);
+        padding-top: 10px;
+    }
+}
 
 /* login/signup page */
 .signInUpBox {
