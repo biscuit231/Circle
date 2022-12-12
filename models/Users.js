@@ -12,7 +12,7 @@ Users.init(
     users_id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV1,
-        // allowNull: false,
+        allowNull: false,
         primaryKey: true,
         // autoIncrement: true
     },

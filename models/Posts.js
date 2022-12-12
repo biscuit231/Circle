@@ -27,10 +27,10 @@ Posts.init(
     post_author: {
         type: DataTypes.STRING,
         allowNull: false,
-        // references: {
-        //     model: 'users',
-        //     key: 'users_id',
-        // }
+        references: {
+            model: 'users',
+            key: 'user_name',
+        }
     },
     post_date: {
         type: DataTypes.DATE,
