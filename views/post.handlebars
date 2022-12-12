@@ -3,10 +3,12 @@
 <div>
     post handlebars
 </div>
-<h1>{{post_title}}</h1>
-<p>{{post_body}}
-</div>
 
-{{!-- JUST FOR TESTING --}}
+    <div>
+        <h1>{{post.title}}</h1>
+        <p>{{post.post.body}}</p>
+    </div>
+
+
 
 {{! Path: routes/homepage.js }}
