@@ -13,14 +13,14 @@ router.get('/', async (req, res) => {
         res.status(500).json (err)
     }
 })
-//create new user
+
 
 //render new user form
 router.get('/newUser', (req, res) => {
     res.render('newUser');
 });
 
-
+//create new user
 router.post('/', async (req, res) => {
     try {
         const newUser = await Users.create({

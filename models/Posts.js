@@ -24,7 +24,7 @@ Posts.init(
     //     type: DataTypes.STRING,
     //     allowNull: true,
     // },
-    //TODO: WHY!!!!!!!!
+
     post_author: {
         type: DataTypes.UUID,
         allowNull: false,
@@ -39,8 +39,12 @@ Posts.init(
         defaultValue: DataTypes.NOW,
     },
     // post_replys: {
-    //     type: DataTypes.STRING,
+    //     type: DataTypes.UUID,
     //     allowNull: true,
+    //     references: {
+    //       model: 'replys',
+    //       key: 'replys_id',
+    //     }
     // },
     // post_location: {
     //     type: DataTypes.INTEGER,

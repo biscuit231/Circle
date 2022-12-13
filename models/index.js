@@ -25,11 +25,11 @@ Replys.belongsTo(Users, {
 }); 
 
 Posts.hasMany(Replys, { 
-    foreignKey: 'posts_id',
+    foreignKey: 'post_id',
 });
 
 Replys.belongsTo(Posts, {
-    foreignKey: 'posts_id',
+    foreignKey: 'post_id',
 });
 
 
@@ -81,7 +81,7 @@ module.exports = {
     Users,
     // Communities,
     Posts,
-    //Replys,
+    Replys,
    // Files,
     //Friends,
   };
