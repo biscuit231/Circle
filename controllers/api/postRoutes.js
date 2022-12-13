@@ -14,15 +14,13 @@ router.get('/', async (req, res) => {
     }
 })
 
+
 // Create Post
-router.post('/', async (req, res) => {
+router.post('/create', async (req, res) => {
     try {
         const newPost = await Posts.create({
-            post_title: req.body.post_title,
-            post_body: req.body.post_body,
-            // TODO: 
-            post_author: req.body.post_author,
-            post_date: post_date
+         ...req.body,
+         //user_id: req.session.user_id
         });
         console.log(newPost);
         res.status(200).json(newPost);
