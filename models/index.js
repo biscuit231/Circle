@@ -2,7 +2,7 @@
 const Users = require('./Users');
 // const Communities = require('./Communities');
 const Posts = require('./Posts');
-//const Replys = require('./Replys');
+const Replys = require('./Replys');
 //const Files = require('./Files');
 //const Friends = require('./Friends');
 
