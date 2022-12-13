@@ -1,20 +1,31 @@
-{{!-- JUST FOR TESTING --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Main</title>
-</head>
-<body>
-    <header><h1>TOP NAV</h1></header>
-    <main>
-        {{{ body }}}
-    </main>
-    <footer>Footer</footer>
-    
-    
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'/>
+    <title>Circle</title>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo left">Circle</a>
+        <ul id="nav-mobile" class="right">
+          {{if loggedin}}
+          <li><a href="/logout">Logout</a></li>
+          {{else}}
+          <li><a href="sass.html">Login</a></li>
+          <li><a href="badges.html">Create Account</a></li>
+          {{/if}} 
+        </ul>
+      </div>
+    </nav>
+    {{{ body }}}
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+  </body>
 </html>
-{{!-- JUST FOR TESTING --}}
