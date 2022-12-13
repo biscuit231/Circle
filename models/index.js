@@ -16,21 +16,21 @@ Posts.belongsTo(Users, {
     foreignKey: 'post_author',
 });
 
-// Users.hasMany(Replys, {
-//     foreignKey: 'reply_author',
-// });
+Users.hasMany(Replys, {
+    foreignKey: 'reply_author',
+});
 
-// Replys.belongsTo(Users, {   
-//     foreignKey: 'reply_author',
-// }); 
+Replys.belongsTo(Users, {   
+    foreignKey: 'reply_author',
+}); 
 
-// Posts.hasMany(Replys, { 
-//     foreignKey: 'posts_id',
-// });
+Posts.hasMany(Replys, { 
+    foreignKey: 'posts_id',
+});
 
-// Replys.belongsTo(Posts, {
-//     foreignKey: 'posts_id',
-// });
+Replys.belongsTo(Posts, {
+    foreignKey: 'posts_id',
+});
 
 
 

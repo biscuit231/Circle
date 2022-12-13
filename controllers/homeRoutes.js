@@ -6,8 +6,9 @@ const { Posts, Users} = require('../models');
 router.get('/', async (req, res) => {
     try {
         const postData = await Posts.findAll({
+          
 });
-    
+    console.log(postData);
         const posts = postData.map((post) => post.get({ plain: true }));
         console.log(posts);
     
