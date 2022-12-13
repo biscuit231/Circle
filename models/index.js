@@ -16,6 +16,7 @@ Posts.belongsTo(Users, {
     foreignKey: 'post_author',
 });
 
+//user reply relationsho
 Users.hasMany(Replys, {
     foreignKey: 'reply_author',
 });
@@ -24,6 +25,7 @@ Replys.belongsTo(Users, {
     foreignKey: 'reply_author',
 }); 
 
+//post reply relationship
 Posts.hasMany(Replys, { 
     foreignKey: 'post_id',
 });
