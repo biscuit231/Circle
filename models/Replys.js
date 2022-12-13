@@ -18,7 +18,7 @@ Replys.init(
         references: {
           model: 'users',
           key: 'users_id',
-        }
+        },
     },
     reply_body: {
         type: DataTypes.STRING,
@@ -27,7 +27,16 @@ Replys.init(
     reply_date: {
         type: DataTypes.INTEGER,
         allowNull: false,
+    },
+    
+      post_id: {
+        type: DataTypes.UUID,
+        allowNull: true,
+        references: {
+          model: 'posts',
+          key: 'post_id',
     }
+      }
   },
   {
     sequelize,

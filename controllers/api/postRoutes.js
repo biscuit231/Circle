@@ -34,7 +34,7 @@ router.post('/create', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const oldPost = await Posts.update(req.body, {
-            where: {id: req.params.id}
+            where: {post_id: req.params.id}
         })
         // const updatePost = await oldPost.update({
         //     post_title: req.body.post_title,
@@ -42,7 +42,7 @@ router.put('/:id', async (req, res) => {
         // })
 
         console.log(oldPost);
-        res.status(200).json(oldPost);
+        res.status(200).json('Post UPDATED');
         //res.render('homepage', {updatePost});
     } catch (err) {
         res.status(500).json (err)
