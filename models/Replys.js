@@ -29,7 +29,7 @@ Replys.init(
         allowNull: false,
     },
     
-      post_id: {
+      posts_id: {
         type: DataTypes.UUID,
         allowNull: true,
         references: {
