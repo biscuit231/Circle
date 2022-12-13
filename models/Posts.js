@@ -24,12 +24,13 @@ Posts.init(
     //     type: DataTypes.STRING,
     //     allowNull: true,
     // },
+    //TODO: WHY!!!!!!!!
     post_author: {
-        type: DataTypes.STRING,
+        type: DataTypes.UUID,
         allowNull: false,
         references: {
             model: 'users',
-            key: 'user_name',
+            key: 'users_id',
         }
     },
     post_date: {
