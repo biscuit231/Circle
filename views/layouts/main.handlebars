@@ -16,8 +16,8 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left">Circle</a>
         <ul id="nav-mobile" class="right">
-          {{#if session.logged_in }}
-          <li><a href="/logout">Logout</a></li>
+          {{#if logged_in }}
+          <li id="logout"><a href="#">Logout</a></li>
           {{else}}
           <li><a href="/api/users/login">Login</a></li>
           <li><a href="/api/users/newUser">Create Account</a></li>
@@ -30,7 +30,7 @@
     </div>  
  
 
-
+    <script src ='/public/js/logout.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
 
   </body>

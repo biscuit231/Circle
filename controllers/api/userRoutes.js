@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 //render new user form
 router.get('/newUser', (req, res) => {
-    res.render('newUser');
+    res.render('newUser', {logged_in: req.session.logged_in});
 });
 
 //create new user
@@ -75,11 +75,11 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        // const userId = userData.users_id;
+      
 
         req.session.save(() => {
             req.session.logged_in = true;
-            req.session.user_id = userData.id;
+            req.session.user_id = userData.users_id;
             res 
                 .status(200)
                 .json({ user: userData, message: 'You are now logged in!' });
