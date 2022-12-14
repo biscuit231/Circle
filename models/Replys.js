@@ -14,7 +14,7 @@ Replys.init(
     },
     reply_author: {
         type: DataTypes.UUID,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'users',
           key: 'users_id',
@@ -22,11 +22,12 @@ Replys.init(
     },
     reply_body: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     reply_date: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW
     },
     
       posts_id: {
