@@ -7,7 +7,7 @@ const replyRoutes = require('./replyRoutes')
 router.use('/replys', replyRoutes);
 router.use('/posts', postRoutes);
 router.use('/users', userRoutes);
-router.use('/signup', userRoutes);
+
 
 module.exports = router;
 

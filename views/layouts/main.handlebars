@@ -19,8 +19,8 @@
           {{#if loggedin}}
           <li><a href="/logout">Logout</a></li>
           {{else}}
-          <li><a href="sass.html">Login</a></li>
-          <li><a href="/api/signup/newUser">Create Account</a></li>
+          <li><a href="/api/users/login">Login</a></li>
+          <li><a href="/api/users/newUser">Create Account</a></li>
           {{/if}} 
         </ul>
       </div>
@@ -32,6 +32,6 @@
 
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
-    <script src="/js/users.js"></script>
+
   </body>
 </html>

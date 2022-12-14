@@ -21,7 +21,7 @@ router.get('/newUser', (req, res) => {
 });
 
 //create new user
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
         const newUser = await Users.create({
             user_name: req.body.user_name,
@@ -33,7 +33,6 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn = true;
-
             res.status(200).json(newUser)
         })
 
@@ -43,6 +42,16 @@ router.post('/', async (req, res) => {
 })
 
 //login
+router.get ('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+
+
 router.post('/login', async (req, res) => {
     try {
         const userData = await Users.findOne({ where: { email: req.body.email } });
