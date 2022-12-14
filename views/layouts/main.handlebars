@@ -16,7 +16,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left">Circle</a>
         <ul id="nav-mobile" class="right">
-          {{#if loggedin}}
+          {{#if session.logged_in }}
           <li><a href="/logout">Logout</a></li>
           {{else}}
           <li><a href="/api/users/login">Login</a></li>
