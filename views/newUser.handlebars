@@ -1,29 +1,46 @@
-<form class="col s4 signup-form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <title>New User</title>
+</head>
+<body id="signUpBg">
+  <div>
+    
+  </div>
+
+  <div class="signBox">
+    <form class="col s4">
       <div class="row">
         <div class="input-field col s12">
-          <input id="userName-signup" type="text" class="validate">
-          <label for="UserName">User Name</label>
+          <h1 class="signUpTitle">Sign Up</h1>
+          <input class="inputMargin" id="FirstName" type="text" class="validate">
+          <label class="colourTxt" for="FirstName">User Name</label>
         </div>
         <div class="input-field col s12">
-          <input id="firstName-signup" type="text" class="validate">
-          <label for="firstName">First Name</label>
+          <input class="inputMargin" id="FirstName" type="text" class="validate">
+          <label class="colourTxt" for="FirstName">First Name</label>
         </div>
         <div class="input-field col s12">
-          <input id="lastName-signup" type="text" class="validate">
-          <label for="lastName">Last Name</label>
+          <input class="inputMargin" id="LastName" type="text" class="validate">
+          <label class="colourTxt" for="LastName">Last Name</label>
         </div>
-         <div class="input-field col s12">
-          <input id="email-signup" type="email" class="validate">
-          <label for="email">Email</label>
+        <div class="input-field col s12">
+          <input class="inputMargin" id="Email" type="email" class="validate">
+          <label class="colourTxt" for="Email">Email</label>
         </div>
-		  <div class="input-field col s12">
-          <input id="password-signup" type="password" class="validate">
-          <label for="password">Password</label>
+      <div class="input-field col s12">
+          <input class="inputMargin" id="Password" type="password" class="validate">
+          <label class="colourTxt" for="Password">Password</label>
           </div>
-		  <div class="input-field col s12">
-			  <button type="submit" class="waves-effect waves-light btn">Submit</button>
+      <div class="input-field col s12">
+        <button type="submit" class="waves-effect waves-light btn inputMargin submitBtn">Submit</button>
         </div>
       </div>
     </form>
-
-    <script src="/js/users.js"></script>
+  </div>
+</body>
+</html>

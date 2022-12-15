@@ -1,12 +1,81 @@
-* {
-    border: 0;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-};
+/* General */
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-.main {
-display: flex;
-justify-content: center;
-min-width: 300px;
-};
+/* sign up page */
+#signUpBg {
+    background: url(../images/singUpBg.jpg);
+}
+.signBox {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    width: 30%;
+    border: 3px solid rgb(30, 0, 121);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 6px;
+}
+.inputMargin {
+    margin-top: 5px;
+}
+.submitBtn {
+    margin-top: 8px;
+    background-color: aqua;
+    border-radius: 6px;
+    width: 110px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.submitBtn:hover {
+    color: rgb(14, 120, 0);
+}
+.signUpTitle {
+    text-align: center;
+    font-size: 62px;
+}
+.colourTxt {
+    color: white;
+}
+@media only screen and (max-width: 880px) {
+    .signBox {
+        width: 300px;
+    }
+  }
+
+/* post */
+.postBg {
+    background-color: rgb(165, 165, 165);
+    width: 700px;
+    border-radius: 10px;
+}
+.postInsideMargin {
+    margin: 10px;
+    padding: 10px;
+}
+#spanPost {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+}
+#postText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+}
+.PostTextarea {
+    border-radius: 10px;
+    padding: 7px;
+    width: 550px;
+    height: 110px;
+}
+#replySubmitMargin {
+    margin-top: 10px;
+}
+.postSubBtn {
+    width: 120px;
+    border-radius: 6px;
+}
