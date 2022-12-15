@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         const userData = await Posts.findAll({
         });
         
-        console.log(userData);
+
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json (err)
@@ -15,14 +15,16 @@ router.get('/', async (req, res) => {
 })
 
 
+
 // Create Post
 router.post('/create', async (req, res) => {
+    console.log(req.session.user_id)
     try {
         const newPost = await Posts.create({
-         ...req.body,
-         //user_id: req.session.user_id
+            ...req.body,
+            user_id: req.session.user_id
         });
-        console.log(newPost);
+  
         res.status(200).json(newPost);
         //res.render('homepage', {newPost});
     } catch (err) {
@@ -37,7 +39,6 @@ router.put('/:id', async (req, res) => {
             where: {post_id: req.params.id}
         })
 
-        console.log(oldPost);
         res.status(200).json("Post updated");
         //res.render('homepage', {updatePost});
     } catch (err) {
@@ -52,7 +53,7 @@ router.delete('/:id', async (req, res) => {
 
         deletePost.destroy();
 
-        console.log(deletePost);
+    
         res.status(200).json(deletePost);
     } catch (err) {
         res.status(500).json (err)

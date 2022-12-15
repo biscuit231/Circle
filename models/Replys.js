@@ -14,7 +14,6 @@ Replys.init(
     },
     reply_author: {
         type: DataTypes.UUID,
-        allowNull: true,
         references: {
           model: 'users',
           key: 'users_id',
@@ -32,7 +31,6 @@ Replys.init(
     
       posts_id: {
         type: DataTypes.UUID,
-        allowNull: true,
         references: {
           model: 'posts',
           key: 'post_id',
@@ -44,6 +42,7 @@ Replys.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+    modelName: 'replys',
   }
 );
 

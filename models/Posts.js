@@ -8,9 +8,7 @@ Posts.init(
     post_id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
-        // allowNull: false,
         primaryKey: true,
-        // autoIncrement: true
     },
     post_title: {
         type: DataTypes.STRING,
@@ -20,9 +18,13 @@ Posts.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    // post_files: {
+    // post_images: {
     //     type: DataTypes.STRING,
     //     allowNull: true,
+    //     references: {
+    //         model: 'images',
+    //         key: 'images_id',
+    //     }
     // },
 
     post_author: {
@@ -38,14 +40,6 @@ Posts.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
-    // post_replys: {
-    //     type: DataTypes.UUID,
-    //     allowNull: true,
-    //     references: {
-    //       model: 'replys',
-    //       key: 'replys_id',
-    //     }
-    // },
     // post_location: {
     //     type: DataTypes.INTEGER,
     //     allowNull: true,
@@ -56,6 +50,7 @@ Posts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+    modelName: 'posts',
   }
 );
 

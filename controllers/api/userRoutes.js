@@ -21,7 +21,7 @@ router.get('/newUser', (req, res) => {
 });
 
 //create new user
-router.post('/', async (req, res) => {
+router.post('/signup', async (req, res) => {
     try {
         const newUser = await Users.create({
             user_name: req.body.user_name,
@@ -31,9 +31,12 @@ router.post('/', async (req, res) => {
             password: req.body.password
         });
 
-        req.session.save(() => {
-            req.session.loggedIn = true;
+        // const userId = await Users.get({ where: { email: req.body.email } });
 
+        req.session.save(() => {
+            req.session.logged_in = true;
+            //changed
+        
             res.status(200).json(newUser)
         })
 
@@ -43,6 +46,16 @@ router.post('/', async (req, res) => {
 })
 
 //login
+router.get ('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+
+
+
 router.post('/login', async (req, res) => {
     try {
         const userData = await Users.findOne({ where: { email: req.body.email } });
@@ -63,13 +76,15 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+      
+
         req.session.save(() => {
-            req.session.loggedIn = true;
-            TODO://add user id to session, need to check if i can use user_id from model?
-            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+            req.session.user_id = userData.users_id;
             res 
                 .status(200)
                 .json({ user: userData, message: 'You are now logged in!' });
+                console.log(userData);
         });
     } catch (err) {
         res.status(500).json(err);
@@ -78,7 +93,7 @@ router.post('/login', async (req, res) => {
 
 //logout
 router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) { 
+    if (req.session.logged_in) { 
         req.session.destroy(() => {
             res.status(204).end();
         });
