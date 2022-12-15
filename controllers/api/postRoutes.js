@@ -18,17 +18,17 @@ router.get('/', async (req, res) => {
 
 // Create Post
 router.post('/create', async (req, res) => {
-    console.log(req.session.user_id)
+    console.log(req.session.user_id);
     try {
         const newPost = await Posts.create({
             ...req.body,
-            user_id: req.session.user_id
+            post_author: req.session.user_id
         });
   
         res.status(200).json(newPost);
         //res.render('homepage', {newPost});
     } catch (err) {
-        res.status(500).json (err)
+        res.status(500).json (err);
     }
 })
 
