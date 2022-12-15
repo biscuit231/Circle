@@ -19,8 +19,9 @@ router.get('/', async (req, res) => {
 router.post('/create', async (req, res) => {
     try {
         const newReply = await Replys.create({
-         ...req.body,
-            user_id: req.session.user_id
+        reply_body: req.body.reply,
+        posts_id: req.session.postId,
+        reply_author: req.session.user_id
         });
    
         res.status(200).json(newReply);
