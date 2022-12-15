@@ -3,7 +3,7 @@ const Users = require('./Users');
 // const Communities = require('./Communities');
 const Posts = require('./Posts');
 const Replys = require('./Replys');
-//const Files = require('./Files');
+// const Images = require('./Images');
 //const Friends = require('./Friends');
 
 
@@ -33,6 +33,16 @@ Posts.hasMany(Replys, {
 Replys.belongsTo(Posts, {
     foreignKey: 'post_id',
 });
+
+//post image relationship
+
+// Posts.hasOne(Images, {
+//     foreignKey: 'post_id',
+// });
+
+// Images.belongsTo(Posts, {
+//     foreignKey: 'post_id',
+// });
 
 
 

@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 //render new user form
 router.get('/newUser', (req, res) => {
-    res.render('newUser', {logged_in: req.session.logged_in});
+    res.render('newUser');
 });
 
 //create new user
@@ -35,7 +35,8 @@ router.post('/signup', async (req, res) => {
 
         req.session.save(() => {
             req.session.logged_in = true;
-            // req.session.user_id = userId;
+            //changed
+        
             res.status(200).json(newUser)
         })
 
@@ -83,6 +84,7 @@ router.post('/login', async (req, res) => {
             res 
                 .status(200)
                 .json({ user: userData, message: 'You are now logged in!' });
+                console.log(userData);
         });
     } catch (err) {
         res.status(500).json(err);
