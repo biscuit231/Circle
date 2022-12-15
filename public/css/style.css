@@ -1,174 +1,81 @@
-/* general */
-body {
-    margin: 0;
-}
-:root {
-    --light-grey: rgb(208, 208, 208);
+/* General */
+label {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* nav */
-.navBg {
-    background-color: rgb(0, 180, 220);
-    height: 100px;
-    padding: 5px;
+/* sign up page */
+#signUpBg {
+    background: url(../images/singUpBg.jpg);
 }
-.navBtn {
-    font-size: 16px;
-}
-.logoImg {
-    width: 90px;
-    height: auto;
-    padding-bottom: 10px;
-}
-#searchBtn {
-    width: 28px;
-    border-radius: 30px;
-    height: 28px;
-    text-align: center;
-}
-/* end nav */
-
-/* post section */
-.mainBorder {
-    margin: 10px;
-    padding: 5px;
-    background-color: rgb(46, 65, 114);
-}
-.topPostBar {
-    text-align: center;
-}
-.topPostBorder {
-}
-.postBox {
-    margin: 10px;
-    border: solid black;
-    background-color: white;
-}
-.postBoxText {
-    margin: 9px;
-}
-.postImg{
-    margin: 10px;
-    border: solid black;
-    background-color: white;
-}
-.arrowIcon{
-    border: solid 2px black;
-    border-radius: 30px;
-    width: 17px;
-    height: 17px;
-    text-align: center;
-}
-.postSection {
-    margin: 3px;
-    background-color: var(--light-grey);
-    padding-top: 10px;
-}
-.btnUp {
-    border: none; 
-    cursor: pointer; 
-    background-color: var(--light-grey);
-    margin: 5px;
-  }
-  .btnUp:hover {
-    color: green;
-  }
-  .btnDown {
-    border: none; 
-    cursor: pointer; 
-    text-align: center;
-    background-color: var(--light-grey);
-  }
-  .btnDown:hover {
-    color: red;
-  }
-  @media screen and (max-width: 2400px) {
-    .mainBorder {
-        width: 60%;
-        margin-left: 20%;
-    }
-    .postSection {
-        width: 99.4%;
-        margin-top: 15px;
-    }
-   }
-   @media screen and (max-width: 780px) {
-    .mainBorder {
-        margin: 10px;
-        padding: 5px;
-        background-color: rgb(46, 65, 114);
-        width: 92%;
-    }
-    .postSection {
-        margin: 3px;
-        background-color: var(--light-grey);
-        padding-top: 10px;
-    }
-}
-
-/* login/signup page */
-.signInUpBox {
-    background-color: var(--light-grey);
+.signBox {
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    width: 30%;
+    border: 3px solid rgb(30, 0, 121);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
     position: absolute;
-    width: 300px;
-    height: 200px;
-    z-index: 15;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    margin: -100px 0 0 -150px;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 6px;
 }
-.signCenter {
-    text-align: center;
+.inputMargin {
+    margin-top: 5px;
 }
-.signLogo {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    width: 95%;
-    position: absolute;
-    z-index: 10;
-}
-.signBoxMargin {
-    margin-left: 10px;
-}
-.abstractImg {
-    filter: brightness(120%) saturate(210%);
-}
-.signIn {
+.submitBtn {
     margin-top: 8px;
+    background-color: aqua;
+    border-radius: 6px;
+    width: 110px;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.signUp {
+.submitBtn:hover {
+    color: rgb(14, 120, 0);
+}
+.signUpTitle {
+    text-align: center;
+    font-size: 62px;
+}
+.colourTxt {
+    color: white;
+}
+@media only screen and (max-width: 880px) {
+    .signBox {
+        width: 300px;
+    }
+  }
+
+/* post */
+.postBg {
+    background-color: rgb(165, 165, 165);
+    width: 700px;
+    border-radius: 10px;
+}
+.postInsideMargin {
+    margin: 10px;
+    padding: 10px;
+}
+#spanPost {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 46px;
+    font-weight: bold;
+}
+#postText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 39px;
+}
+.PostTextarea {
+    border-radius: 10px;
+    padding: 7px;
+    width: 550px;
+    height: 110px;
+}
+#replySubmitMargin {
     margin-top: 10px;
 }
-.signUpFont {
-    font-size: 18px;
+.postSubBtn {
+    width: 120px;
+    border-radius: 6px;
 }
-
-@media screen and (max-width: 2400px) {
- .signLogo {
-    width: 40%;
-    display: block;
-    margin: 0 auto;
-    left: 30%;
- }
- .signInUpBox {
-    height: 400px;
- }
-}
-
-@media screen and (max-width: 780px) {
-    .signLogo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 40px;
-        width: 95%;
-        position: absolute;
-        z-index: 10;
-        left: 0;
-    }
-}
-
-
-
