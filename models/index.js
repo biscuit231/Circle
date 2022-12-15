@@ -1,9 +1,9 @@
 //import models
 const Users = require('./Users');
 // const Communities = require('./Communities');
- const Posts = require('./Posts');
+const Posts = require('./Posts');
 const Replys = require('./Replys');
-//const Files = require('./Files');
+// const Images = require('./Images');
 //const Friends = require('./Friends');
 
 
@@ -16,20 +16,32 @@ Posts.belongsTo(Users, {
     foreignKey: 'post_author',
 });
 
-// Users.hasMany(Replys, {
-//     foreignKey: 'reply_author',
+//user reply relationsho
+Users.hasMany(Replys, {
+    foreignKey: 'reply_author',
+});
+
+Replys.belongsTo(Users, {   
+    foreignKey: 'reply_author',
+}); 
+
+//post reply relationship
+Posts.hasMany(Replys, { 
+    foreignKey: 'post_id',
+});
+
+Replys.belongsTo(Posts, {
+    foreignKey: 'post_id',
+});
+
+//post image relationship
+
+// Posts.hasOne(Images, {
+//     foreignKey: 'post_id',
 // });
 
-// Replys.belongsTo(Users, {   
-//     foreignKey: 'reply_author',
-// }); 
-
-// Posts.hasMany(Replys, { 
-//     foreignKey: 'posts_id',
-// });
-
-// Replys.belongsTo(Posts, {
-//     foreignKey: 'posts_id',
+// Images.belongsTo(Posts, {
+//     foreignKey: 'post_id',
 // });
 
 
@@ -81,7 +93,7 @@ module.exports = {
     Users,
     // Communities,
     Posts,
-    //Replys,
+    Replys,
    // Files,
     //Friends,
   };

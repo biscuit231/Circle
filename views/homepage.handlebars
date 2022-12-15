@@ -1,15 +1,28 @@
-{{!-- JUST FOR TESTING --}}
-
 <div>
-    homepage handlebars
-</div>
+  <h4>new post</h4>
+  <form class="col s12 post">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="post_title" id="post_title" type="text" class="validate">
+          <label for="post_title">Post Title</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="post_body" type="text" class="validate">
+          <label for="post_body">Body</label>
+        </div>
+      </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+
+
+    </form>
 {{#each posts as |post|}}
-    <div>
-        <a href="/posts/{{post.post_id}}">{{post.post_title}}</a>
-    </div>
+<div>
+  <a href="/posts/{{post.post_id}}">{{post.post_title}}</a>
+</div>
 {{/each}}
 </div>
 
-{{!-- JUST FOR TESTING --}}
-
-{{! Path: routes/homepage.js }}
+<script src="./js/post.js"></script>

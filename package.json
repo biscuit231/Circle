@@ -8,7 +8,8 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js",
     "seed_users": "node seeds/seed_users.js",
-    "seed_posts": "node seeds/seed_posts.js"
+    "seed_posts": "node seeds/seed_posts.js",
+    "seed_replys": "node seeds/seed_replys.js"
   },
   "keywords": [],
   "author": "",

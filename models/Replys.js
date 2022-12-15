@@ -14,26 +14,35 @@ Replys.init(
     },
     reply_author: {
         type: DataTypes.UUID,
-        allowNull: false,
         references: {
           model: 'users',
           key: 'users_id',
-        }
+        },
     },
     reply_body: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     reply_date: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DATE,
         allowNull: false,
+        defaultValue: DataTypes.NOW
+    },
+    
+      posts_id: {
+        type: DataTypes.UUID,
+        references: {
+          model: 'posts',
+          key: 'post_id',
     }
+      }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
+    modelName: 'replys',
   }
 );
 
