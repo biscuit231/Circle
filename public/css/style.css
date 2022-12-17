@@ -8,7 +8,7 @@ label {
     background: url(../images/singUpBg.jpg);
 }
 .signBox {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     margin: auto;
     width: 30%;
     border: 3px solid rgb(30, 0, 121);
