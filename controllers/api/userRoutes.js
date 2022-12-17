@@ -46,6 +46,7 @@ router.post('/signup', async (req, res) => {
 })
 
 //login
+//TODO: move out of API folder
 router.get ('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
@@ -76,11 +77,11 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-      
+      console.log(userData);
 
         req.session.save(() => {
             req.session.logged_in = true;
-            req.session.user_id = userData.users_id;
+            req.session.user_id = userData.dataValues.users_id;
             res 
                 .status(200)
                 .json({ user: userData, message: 'You are now logged in!' });

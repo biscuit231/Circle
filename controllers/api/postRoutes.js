@@ -5,6 +5,7 @@ const { Posts } = require('../../models');
 router.get('/', async (req, res) => {
     try {
         const userData = await Posts.findAll({
+            order: [post_date, 'DESC']
         });
         
 
@@ -18,11 +19,10 @@ router.get('/', async (req, res) => {
 
 // Create Post
 router.post('/create', async (req, res) => {
-    console.log(req.session.user_id)
     try {
         const newPost = await Posts.create({
             ...req.body,
-            user_id: req.session.user_id
+            users_id: req.session.user_id
         });
   
         res.status(200).json(newPost);
