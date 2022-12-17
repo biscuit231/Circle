@@ -79,3 +79,11 @@ label {
     width: 120px;
     border-radius: 6px;
 }
+
+
+/* New Styles - TO OVERIDE materialize */
+
+#postText {
+    font-size: 14px;
+    padding: 5px;
+}

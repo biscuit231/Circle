@@ -24,3 +24,6 @@ const replyFormHandler = async (event) => {
 document
 .querySelector('.reply')
 .addEventListener('submit', replyFormHandler);
+
+//get all replys
+

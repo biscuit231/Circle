@@ -18,10 +18,11 @@ Replys.init(
           model: 'users',
           key: 'users_id',
         },
+        allowNull: false,
     },
     reply_body: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
     },
     reply_date: {
         type: DataTypes.DATE,
