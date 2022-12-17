@@ -19,16 +19,24 @@ router.get('/', async (req, res) => {
 
 // Create Post
 router.post('/create', async (req, res) => {
+<<<<<<< HEAD
     try {
         const newPost = await Posts.create({
             ...req.body,
             users_id: req.session.user_id
+=======
+    console.log(req.session.user_id);
+    try {
+        const newPost = await Posts.create({
+            ...req.body,
+            post_author: req.session.user_id
+>>>>>>> bef3de6ee766b62633a902c8fa0378f63e59588a
         });
   
         res.status(200).json(newPost);
         //res.render('homepage', {newPost});
     } catch (err) {
-        res.status(500).json (err)
+        res.status(500).json (err);
     }
 })
 

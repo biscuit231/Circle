@@ -39,6 +39,10 @@ router.get('/posts/:id', async (req, res) => {
             post, 
             logged_in: req.session.logged_in
         });
+        req.session.save(() => {
+            req.session.postId = req.params.id;
+        })
+        
     } catch (err) { 
         res.status(500).json(err);
     }
