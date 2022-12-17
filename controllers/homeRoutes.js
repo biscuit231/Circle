@@ -33,10 +33,11 @@ router.get('/', async (req, res) => {
 //get posts by pk
 router.get('/posts/:id', async (req, res) => {
     try {
-        const postData = await Posts.findByPk(req.params.id);
+        const postID = req.params.id
+        const postData = await Posts.findByPk(postID);
         const replyData = await Replys.findAll({
             where: {
-                post_id: req.params.id
+                posts_id: postID
             }
         });
         console.log(replyData);
@@ -51,7 +52,7 @@ router.get('/posts/:id', async (req, res) => {
             logged_in: req.session.logged_in
         });
         req.session.save(() => {
-            req.session.postId = req.params.id;
+            req.session.postId = postID;
         })
         console.log(post)
         // console.log(reply)
