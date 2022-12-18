@@ -24,37 +24,22 @@ router.get('/', async (req, res) => {
 router.post('/create', upload.single('post_image'), async (req, res) => {
     try {
       // Use the `req.file` object to access the uploaded file
-      const postData = {
-        post_title: req.body.post_title,
-        post_body: req.body.post_body,
-        post_author: req.session.user_id,
-        post_image: req.file.filename,
-      };
-  
+        const postData = {
+            post_title: req.body.post_title,
+            post_body: req.body.post_body,
+            post_author: req.session.user_id,
+            post_image: req.file.filename,
+          };
+
       const dbPost = await Posts.create(postData);
-      res.json(dbPost);
+      
+      res.redirect('/');
     } catch (err) {
       console.error(err);
       res.status(500).json(err);
     }
   });
   
-//origional post route, revert to this if I break everything with my multer changes
-// router.post('/create', async (req, res) => {
-//     console.log(req.session.user_id);
-//     try {
-//         const newPost = await Posts.create({
-//             ...req.body,
-//             post_author: req.session.user_id
-//         });
-  
-//         res.status(200).json(newPost);
-//         //res.render('homepage', {newPost});
-//     } catch (err) {
-//         res.status(500).json (err);
-//     }
-// })
-
 // Edit Post
 router.put('/:id', async (req, res) => {
     try {

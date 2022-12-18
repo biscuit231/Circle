@@ -14,7 +14,7 @@ const replyFormHandler = async (event) => {
   
       if (response.ok) {
         alert('Post created');
-        document.location.reload();
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
