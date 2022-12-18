@@ -88,11 +88,18 @@ label {
     padding: 5px;
 }
 
+
+
 .main {
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 400px;
+}
+
+.pad-delete {
+    padding: 0;
+    margin: 0;
 }
 
 /* Modal Overlay */

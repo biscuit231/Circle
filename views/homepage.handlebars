@@ -1,4 +1,5 @@
 <div>
+  {{#if logged_in}}
 <form action="/api/posts/create" method="post" enctype="multipart/form-data" class="valign-wrapper center-align">
   <div class="container">
     <div class="row">
@@ -36,13 +37,17 @@
     </div>
   </div>
 </form>
+{{else}}
+<p>Please <a href="/api/users/login">login</a> to create a post.</p>
+{{/if}}
+</div>
 
 
   {{#each posts as |post|}}
-
-  <div class="row clickable-div" onclick="location.href='/posts/{{post.post_id}}'">
+<div class="justify-content-center pad-delete">
+  <div class="row clickable-div container justify-content-center pad-delete" onclick="location.href='/posts/{{post.post_id}}'">
     <div class="col s12 m7">
-      <div class="card">
+      <div class="card justify-content-center">
          <span class="card-title">{{post.post_title}}</span>
          <p>{{post.user.user_name}}</p>
          <p>{{ format_time post.post_date}}</p>
@@ -59,9 +64,9 @@
       </div>
     </div>
   </div>
+  </div>
 
   {{/each}}
-</div>
 
 <div id="modal" class="modal">
   <div class="modal-content">
