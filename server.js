@@ -4,6 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const multer = require('multer');
+const upload = require('./utils/upload');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -28,7 +30,6 @@ const sess = {
     })
 };
 
-
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);  
@@ -39,6 +40,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+
+app.use(upload.single('post_image'));
 
 
 sequelize.sync({ force: false }).then(() => {
