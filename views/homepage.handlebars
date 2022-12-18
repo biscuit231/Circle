@@ -48,9 +48,9 @@
   <div class="row clickable-div container justify-content-center pad-delete" onclick="location.href='/posts/{{post.post_id}}'">
     <div class="col s12 m7">
       <div class="card justify-content-center">
-         <span class="card-title">{{post.post_title}}</span>
-         <p>{{post.user.user_name}}</p>
-         <p>{{ format_time post.post_date}}</p>
+         <span class="card-title col s12 teal lighten-3">{{post.post_title}}</span>
+         <p class="inline-block col s6 grey">{{post.user.user_name}}</p>
+         <p  class="inline-block col s6 grey">{{ format_time post.post_date}}</p>
         <div class="card-image">
           <img src="/images/uploads/{{post.post_image}}">
         </div>
