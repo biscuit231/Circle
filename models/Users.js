@@ -60,7 +60,15 @@ Users.init(
               updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
               return updatedUserData;
             },
-          },
+            afterCreate: (newUser) => {
+                req.session.save(() => {
+                    req.session.user_id = newUser.users_id;
+                })
+              },
+          
+          
+          
+            },
 
     sequelize,
     timestamps: false,

@@ -31,7 +31,7 @@ router.post('/signup', async (req, res) => {
             password: req.body.password
         });
 
-        // const userId = await Users.get({ where: { email: req.body.email } });
+    
 
         req.session.save(() => {
             req.session.logged_in = true;
@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
         if (!userData) {
             res 
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json('Incorrect email or password, please try again');
             return;
         }
 
@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
         if (!validPassword) {
             res
                 .status(400)
-                .json({ message: 'Incorrect email or password, please try again' });
+                .json('Incorrect email or password, please try again');
             return;
         }
 

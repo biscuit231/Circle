@@ -1,3 +1,8 @@
+// Show the modal
+function showModal() {
+  document.querySelector('.modal-overlay').style.display = 'block';
+}
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -13,15 +18,25 @@ const loginFormHandler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
+    if (!response.ok) {
+      // If not successful, display the response in the modal
+      const data = await response.json();
+      document.querySelector('#response-message').innerHTML = JSON.stringify(data);
+      showModal();
+    } else {
       // If successful, redirect the browser to the profile page
       document.location.replace('/');
-    } else {
-      alert(response.statusText);
     }
   }
 };
 
+// Hide the modal
+function closeModal() {
+  document.querySelector('.modal-overlay').style.display = 'none';
+}
+
 document
 .querySelector('.login-form')
 .addEventListener('submit', loginFormHandler);
+
+document.querySelector('.close-button').addEventListener('click', closeModal);

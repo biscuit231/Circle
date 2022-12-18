@@ -14,7 +14,7 @@ const replyFormHandler = async (event) => {
 
         if (response.ok) {
             console.log("res okay");
-            document.location.reload;
+            document.location.reload();
         
         } else {
             alert(response.statusText);

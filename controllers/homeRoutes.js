@@ -36,6 +36,7 @@ router.get('/posts/:id', async (req, res) => {
         const postID = req.params.id
         const postData = await Posts.findByPk(postID);
         const replyData = await Replys.findAll({
+            order: [['reply_body', 'DESC']],
             where: {
                 posts_id: postID
             }

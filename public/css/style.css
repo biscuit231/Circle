@@ -87,3 +87,59 @@ label {
     font-size: 14px;
     padding: 5px;
 }
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    height: 200px;
+    width: 400px;
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  /* Close Button */
+  .close-button {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Response Message */
+  #response-message {
+    margin: 0;
+  }
+  
