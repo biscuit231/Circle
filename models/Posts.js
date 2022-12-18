@@ -18,14 +18,10 @@ Posts.init(
         type: DataTypes.TEXT,
         allowNull: false,
     },
-    // post_images: {
-    //     type: DataTypes.STRING,
-    //     allowNull: true,
-    //     references: {
-    //         model: 'images',
-    //         key: 'images_id',
-    //     }
-    // },
+    post_image: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
 
     post_author: {
         type: DataTypes.UUID,
@@ -40,10 +36,6 @@ Posts.init(
         allowNull: false,
         defaultValue: DataTypes.NOW,
     },
-    // post_location: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: true,
-    // }
   },
   {
     sequelize,

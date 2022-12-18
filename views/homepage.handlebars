@@ -1,28 +1,82 @@
 <div>
-  <h4>new post</h4>
-  <form class="col s12 post">
-      <div class="row">
-        <div class="input-field col s6">
-          <input placeholder="post_title" id="post_title" type="text" class="validate">
-          <label for="post_title">Post Title</label>
+  {{#if logged_in}}
+<form action="/api/posts/create" method="post" enctype="multipart/form-data" class="valign-wrapper center-align">
+  <div class="container">
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <h4>new post</h4>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="post_title" id="post_title" type="text" class="validate" name="post_title">
+            <label for="post_title">Post Title</label>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="post_body" type="text" class="validate">
-          <label for="post_body">Body</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="post_body" type="text" class="validate" name="post_body">
+            <label for="post_body">Body</label>
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" name="post_image">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+{{else}}
+<p>Please <a href="/api/users/login">login</a> to create a post.</p>
+{{/if}}
+</div>
 
 
-    </form>
-{{#each posts as |post|}}
-<div>
-  <a href="/posts/{{post.post_id}}">{{post.post_title}}</a>
+  {{#each posts as |post|}}
+<div class="justify-content-center pad-delete">
+  <div class="row clickable-div container justify-content-center pad-delete" onclick="location.href='/posts/{{post.post_id}}'">
+    <div class="col s12 m7">
+      <div class="card justify-content-center">
+         <span class="card-title col s12 teal lighten-3">{{post.post_title}}</span>
+         <p class="inline-block col s6 grey">{{post.user.user_name}}</p>
+         <p  class="inline-block col s6 grey">{{ format_time post.post_date}}</p>
+        <div class="card-image">
+          <img src="/images/uploads/{{post.post_image}}">
+        </div>
+        <div class="card-content">
+         
+          <p>{{post.post_body}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/posts/{{post.post_id}}">View Post & Replys</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  {{/each}}
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h4>Post Created</h4>
+    <p>Your post has been successfully created!</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
 </div>
-{{/each}}
-</div>
+
 
 <script src="./js/post.js"></script>

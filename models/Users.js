@@ -60,7 +60,19 @@ Users.init(
               updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
               return updatedUserData;
             },
-          },
+
+            //TODO: fix hook: 500 internal server error, looks like its returning nul for newUser.users_id
+            // afterCreate: async (newUser) => {
+            //     await req.session.save(() => {
+            //       req.session.user_id = newUser.users_id;
+            //     });
+            //     console.log('Session saved');
+            //   },
+              
+          
+          
+          
+            },
 
     sequelize,
     timestamps: false,

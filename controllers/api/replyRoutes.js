@@ -16,10 +16,11 @@ router.get('/', async (req, res) => {
 
 
 // Create Reply
+
 router.post('/create', async (req, res) => {
     try {
         const newReply = await Replys.create({
-        reply_body: req.body.reply,
+        reply_body: req.body.reply_body,
         posts_id: req.session.postId,
         reply_author: req.session.user_id
         });
@@ -30,6 +31,26 @@ router.post('/create', async (req, res) => {
         res.status(500).json (err)
     }
 })
+
+
+
+
+// router.post('/create', async (req, res) => {
+//     try {
+//         const newReply = await Replys.create({
+//         reply_body: req.body.reply,
+//         posts_id: req.body.post_id,
+//         reply_author: req.body.user_id
+//         // posts_id: req.session.postId,
+//         // reply_author: req.session.user_id
+//         });
+   
+//         res.status(200).json(newReply);
+//         //res.render('homepage', {newReply});
+//     } catch (err) {
+//         res.status(500).json (err)
+//     }
+// })
 
 // Edit Reply
 router.put('/:id', async (req, res) => {

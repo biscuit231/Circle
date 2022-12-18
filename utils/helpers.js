@@ -3,20 +3,23 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
-  },
-  get_emoji: () => {
-    const randomNum = Math.random();
 
-    // Return a random emoji
-    if (randomNum > 0.7) {
-      return `<span for="img" aria-label="lightbulb">💡</span>`;
-    } else if (randomNum > 0.4) {
-      return `<span for="img" aria-label="laptop">💻</span>`;
+  format_time: (postedTime) => {
+    let currentTime = new Date();
+    let timeElapsed = Math.floor((currentTime - postedTime) / 1000);
+  
+    if (timeElapsed < 60) {
+      return `${timeElapsed} seconds ago`;
+    } else if (timeElapsed >= 60 && timeElapsed < 3600) {
+      let minutes = Math.floor(timeElapsed / 60);
+      return `${minutes} minutes ago`;
+    } else if (timeElapsed >= 3600 && timeElapsed < 86400) {
+      let hours = Math.floor(timeElapsed / 3600);
+      return `${hours} hours ago`;
     } else {
-      return `<span for="img" aria-label="gear">⚙️</span>`;
+      let days = Math.floor(timeElapsed / 86400);
+      return `${days} days ago`;
     }
-  },
+  }
+  
 };
