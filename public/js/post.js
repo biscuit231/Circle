@@ -10,7 +10,7 @@ const replyFormHandler = async (event) => {
   const post_body = formData.get('post_body');
   const post_image = formData.get('post_image');
 
-  // Validate the form data
+  // Validate the form data NOT WORKING
   if (!post_title) {
     M.Modal.init(document.querySelector('#error-modal')).open();
     return;
@@ -27,6 +27,7 @@ const replyFormHandler = async (event) => {
   }
 
   // If the form data is valid, send the request
+  //even if (!post_title) form still submits???
   if (post_title && post_body && post_image) {
     const response = await fetch('/api/posts/create', {
       method: 'POST',
@@ -45,36 +46,3 @@ const replyFormHandler = async (event) => {
 document
   .querySelector('.post')
   .addEventListener('submit', replyFormHandler);
-
-
-
-
-
-
-
-// const replyFormHandler = async (event) => {
-//     event.preventDefault();
-  
-//     const formData = new FormData();
-//     formData.append('post_title', document.querySelector('#post_title').value.trim());
-//     formData.append('post_body', document.querySelector('#post_body').value.trim());
-//     formData.append('post_image', document.querySelector('input[type="file"]').files[0]);
-  
-//     if (formData.get('post_title')) {
-//       const response = await fetch('/api/posts/create', {
-//         method: 'POST',
-//         body: formData,
-//       });
-  
-//       if (response.ok) {
-//         alert('Post created');
-//         document.location.replace('/');
-//       } else {
-//         alert(response.statusText);
-//       }
-//     }
-//   };
-  
-//   document
-//     .querySelector('.post')
-//     .addEventListener('submit', replyFormHandler);
