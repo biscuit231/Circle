@@ -14,10 +14,10 @@
 
     <nav>
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo left">Circle</a>
+        <a href="/" class="brand-logo left logoMargin">Circle</a>
         <ul id="nav-mobile" class="right">
           {{#if logged_in }}
-          <li id="logout"><a href="#">Logout</a></li>
+          <li id="logout"><a href="#" class="logoutStyle">Logout</a></li>
           {{else}}
           <li><a href="/api/users/login">Login</a></li>
           <li><a href="/api/users/newUser">Create Account</a></li>
