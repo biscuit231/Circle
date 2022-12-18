@@ -1,3 +1,12 @@
+const imgInp = document.getElementById("imgInp");
+const preview = document.getElementById("preview");
+
+imgInp.onchange = evt => {
+  const [file] = imgInp.files
+  if (file) {
+    preview.src = URL.createObjectURL(file)
+  }
+}
 const replyFormHandler = async (event) => {
   event.preventDefault();
 
@@ -42,6 +51,7 @@ const replyFormHandler = async (event) => {
     }
   }
 };
+
 
 document
   .querySelector('.post')
