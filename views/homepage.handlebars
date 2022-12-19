@@ -7,7 +7,7 @@
         <h4>new post</h4>
         <div class="row">
           <div class="input-field col s12">
-            <input placeholder="post_title" id="post_title" type="text" class="validate" name="post_title">
+            <input placeholder="Post title" id="post_title" type="text" class="validate" name="post_title">
             <label for="post_title">Post Title</label>
           </div>
         </div>
@@ -26,11 +26,15 @@
         <div class="file-field input-field">
           <div class="btn">
             <span>File</span>
-            <input type="file" name="post_image">
+            <input type="file" name="post_image" id="imgInp">
           </div>
           <div class="file-path-wrapper">
             <input class="file-path validate" type="text">
           </div>
+        </div>
+    {{!-- iamge preview --}}
+        <div>
+            <img id="preview" src="#" alt="Image preview" class="col s12 hidden"/>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
       </div>
@@ -68,10 +72,22 @@
 
   {{/each}}
 
-<div id="modal" class="modal">
+<!-- Modal for error messages -->
+<div id="error-modal" class="modal">
   <div class="modal-content">
-    <h4>Post Created</h4>
-    <p>Your post has been successfully created!</p>
+    <h4>Oops...</h4>
+    <p>Something went wrong. Please check your input and try again.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+  </div>
+</div>
+
+<!-- Modal for success messages -->
+<div id="success-modal" class="modal">
+  <div class="modal-content">
+    <h4>Success!</h4>
+    <p>Your post has been created successfully.</p>
   </div>
   <div class="modal-footer">
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -79,4 +95,5 @@
 </div>
 
 
+<script src="./js/preview.js"></script>
 <script src="./js/post.js"></script>
