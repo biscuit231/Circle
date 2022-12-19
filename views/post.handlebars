@@ -29,7 +29,7 @@
 
         {{#each replys as |reply|}}
         <div class="row pad-delete replys">
-          <div class="col s6"><p>{{reply.user.user_name}}</p></div>
+          <div class="col s6"><p id="commentMargin">{{reply.user.user_name}}</p></div>
           <div class="col s6"><p>{{format_time reply.reply_date}}</p></div>
         </div>
         <div>

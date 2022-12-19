@@ -17,16 +17,16 @@
         <a href="/" class="brand-logo left logoMargin">Circle</a>
         <ul id="nav-mobile" class="right">
           {{#if logged_in }}
-          <li id="logout"><a href="#" class="logoutStyle">Logout</a></li>
+          <li id="logout"><a href="#" id="logoutStyle">Logout</a></li>
           {{else}}
-          <li><a href="/api/users/login">Login</a></li>
-          <li><a href="/api/users/newUser">Create Account</a></li>
+          <li><a href="/api/users/login" id="loginStyle">Login</a></li>
+          <li><a href="/api/users/newUser" id="caStyle">Create Account</a></li>
           {{/if}} 
         </ul>
       </div>
     </nav>
 
-    <div>
+    <div id="postCen">
     {{{ body }}}
     </div>
 
