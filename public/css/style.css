@@ -157,7 +157,9 @@ nav {
     padding: 5px;
 }
 
-
+.hidden {
+    display: none;
+  }
 
 .main {
   display: flex;
