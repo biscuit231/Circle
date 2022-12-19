@@ -1,91 +1,40 @@
-<p align="center">
-  <a href="http://materializecss.com/">
-    <img src="http://materializecss.com/res/materialize.svg" width="150">
-  </a>
-</p>
+  # Circle - Social Media Platform   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<h3 align="center">MaterializeCSS</h3>
+  ## Description
 
-<p align="center">
-  Materialize, a CSS Framework based on material design.
-  <br>
-  <a href="http://materializecss.com/"><strong>-- Browse the docs --</strong></a>
-  <br>
-  <br>
-  <a href="https://travis-ci.org/Dogfalo/materialize">
-    <img src="https://travis-ci.org/Dogfalo/materialize.svg?branch=master" alt="Travis CI badge">
-  </a>
-  <a href="https://badge.fury.io/js/materialize-css">
-    <img src="https://badge.fury.io/js/materialize-css.svg" alt="npm version badge">
-  </a>
-  <a href="https://cdnjs.com/libraries/materialize">
-    <img src="https://img.shields.io/cdnjs/v/materialize.svg" alt="CDNJS version badge">
-  </a>
-  <a href="https://david-dm.org/Dogfalo/materialize">
-    <img src="https://david-dm.org/Dogfalo/materialize/status.svg" alt="dependencies Status badge">
-    </a>
-  <a href="https://david-dm.org/Dogfalo/materialize#info=devDependencies">
-    <img src="https://david-dm.org/Dogfalo/materialize/dev-status.svg" alt="devDependency Status badge">
-  </a>
-  <a href="https://gitter.im/Dogfalo/materialize">
-    <img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter badge">
-  </a>
-</p>
+  This project is a Social Media Platform called Circle. It is an application that lets the user create and log in to an account, which they can then create different posts with a combination of text and images which are posted to the site. They are then also able to reply to either their posts or other peoples posts. Circle uses Materialize, Sequilize, express and mysql2 to generate this application.
+                
 
-## Table of Contents
-- [Quickstart](#quickstart)
-- [Documentation](#documentation)
-- [Supported Browsers](#supported-browsers)
-- [Changelog](#changelog)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
+  ## Table of contents
 
-## Quickstart:
-Read the [getting started guide](http://materializecss.com/getting-started.html) for more information on how to use materialize.
+  * [Contributing](#Contributing)
+  * [Usage](#Usage)
+  * [License](#License)
+  * [Questions](#Questions)
 
-- [Download the latest release](https://github.com/Dogfalo/materialize/releases/latest) of materialize directly from GitHub. ([Beta](https://github.com/Dogfalo/materialize/releases/))
-- Clone the repo: `git clone https://github.com/Dogfalo/materialize.git` (Beta: `git clone -b v1-dev https://github.com/Dogfalo/materialize.git`)
-- Include the files via [cdnjs](https://cdnjs.com/libraries/materialize). More [here](http://materializecss.com/getting-started.html). ([Beta](https://cdnjs.com/libraries/materialize/1.0.0-beta))
-- Install with [npm](https://www.npmjs.com): `npm install materialize-css` (Beta: `npm install materialize-css@next`)
-- Install with [Bower](https://bower.io): `bower install materialize` ([DEPRECATED](https://bower.io/blog/2017/how-to-migrate-away-from-bower/))
-- Install with [Atmosphere](https://atmospherejs.com): `meteor add materialize:materialize` (Beta: `meteor add materialize:materialize@=1.0.0-beta`)
+  
 
-## Documentation
-The documentation can be found at <http://materializecss.com>. To run the documentation locally on your machine, you need [Node.js](https://nodejs.org/en/) installed on your computer.
+  ## Usage 
+  Deployed heroku site:
 
-### Running documentation locally
-Run these commands to set up the documentation:
+  https://secure-crag-53141.herokuapp.com/ 
 
-```bash
-git clone https://github.com/Dogfalo/materialize
-cd materialize
-npm install
-```
+  ## Contributing
 
-Then run `grunt monitor` to compile the documentation. When it finishes, open a new browser window and navigate to `localhost:8000`. We use [BrowserSync](https://www.browsersync.io/) to display the documentation.
+  Check out our issues tab at: https://github.com/biscuit231/Circle
 
-### Documentation for previous releases
-Previous releases and their documentation are available for [download](https://github.com/Dogfalo/materialize/releases).
+  ## License 
+  
+    mit License
+    https://spdx.org/licenses/MIT.html
+    
 
-## Supported Browsers:
-Materialize is compatible with:
+  ## Questions 
 
-- Chrome 35+
-- Firefox 31+
-- Safari 9+
-- Opera
-- Edge
-- IE 11+
+  If you have any questions, please feel free to contact us at:        
 
-## Changelog
-For changelogs, check out [the Releases section of materialize](https://github.com/Dogfalo/materialize/releases) or the [CHANGELOG.md](CHANGELOG.md).
+  Github: [https://github.com/Kokkonut](https://github.com/Kokkonut)       
 
-## Testing
-We use Jasmine as our testing framework and we're trying to write a robust test suite for our components. If you want to help, [here's a starting guide on how to write tests in Jasmine](CONTRIBUTING.md#jasmine-testing-guide).
+  Github: [https://github.com/ZacharyDonovan88](https://github.com/ZacharyDonovan88)         
 
-## Contributing
-Check out the [CONTRIBUTING document](CONTRIBUTING.md) in the root of the repository to learn how you can contribute. You can also browse the [help-wanted](https://github.com/Dogfalo/materialize/labels/help-wanted) tag in our issue tracker to find things to do.
-
-## Copyright and license
-Code Copyright 2018 Materialize. Code released under the MIT license.
+  Github: [https://github.com/biscuit231](https://github.com/biscuit231) 
