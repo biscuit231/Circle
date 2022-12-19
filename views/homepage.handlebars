@@ -48,8 +48,8 @@
 
 
   {{#each posts as |post|}}
-<div class="justify-content-center pad-delete">
-  <div class="row clickable-div container justify-content-center pad-delete" onclick="location.href='/posts/{{post.post_id}}'">
+<div class="justify-content-center pad-delete" id="postMarg">
+  <div class="row clickable-div container justify-content-center pad-delete" id="postWidth" onclick="location.href='/posts/{{post.post_id}}'">
     <div class="col s12 m7">
       <div class="card justify-content-center">
          <span class="card-title col s12 teal lighten-3">{{post.post_title}}</span>
